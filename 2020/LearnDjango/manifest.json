@@ -15,7 +15,7 @@
 
 	"templates": [
 		"index.html", "install-django.html", "start-project.html", "create-app.html", "show-custom-view.html",
-		"show-custom-view2.html", "format.html"
+		"show-custom-view2.html", "data-exchange.html", "models.html", "format.html"
 	],
 
 	"data": {

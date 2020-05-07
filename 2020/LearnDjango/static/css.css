@@ -26,7 +26,7 @@ b {
     border-radius: 5px;
     margin-top: 40px;
     background: white;
-    font-family: GoogleSans;
+    font-family: Roboto;
 }
 
 .step-title-div {
@@ -42,6 +42,7 @@ b {
 
 .step-title-text {
     padding: 10px 20px;
+    font-family: GoogleSans;
 }
 
 .title-info-button-div {
@@ -183,6 +184,14 @@ pre[class*="code-block-div"] {
     border-radius: 3px;
     background: rgb(20, 60, 50);
     box-shadow: 0 0 16px rgba(20, 60, 50, 0.3);
+}
+
+.not-imp {
+    margin: 10px 0;
+    border-left: 3px solid rgb(100, 100, 100);
+    padding: 0 10px;
+    opacity: 0.5;
+    border-radius: 5px;
 }
 
 @keyframes zero-height {

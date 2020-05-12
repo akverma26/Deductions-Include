@@ -32,34 +32,41 @@
 {{ deduction.title }}
 {% endblock %}
 
-{% block main-body %}
-<div class="deducted-page">
-        <div class="info-div">
-            <div class="title">
-                <div class="title-text">
-                    {{ deduction.title }}
-                </div>
-            </div>
-            <div class="info-1">
-                <span> <i class="fas fa-pencil-alt"></i> <a href="{{ deduction.author_profile_link }}">{{ deduction.author }}</a> </span>
-                <span> <i class="fas fa-calendar-plus"></i> {{ deduction.date_uploaded|date }}</span>
-                <span> <i class="fas fa-calendar-check"></i> {{ deduction.date_last_modified|date }}</span>
-            </div>
-            <div class="description">
-                <b>Django</b> is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern.<br>
-                Just go through this short tutorial to learn all about <b class="diff">Django</b>. It will give you an idea, that how <b class="diff">Django</b> works and what you
-                can do with Django.
-            </div>
-            <div class="info-2">
-                <i class="fas fa-tags"></i>
-            
-                {% with tags=deduction.tags|split:" " %}
-                    {% for tag in tags %}
-                        <span>{{ tag }}</span>
-                    {% endfor %}
-                {% endwith %}
+{% block top-bar-page-info %}
+
+<div class="deducted-page-info">
+    <div class="info-div">
+        <div class="title">
+            <div class="title-text">
+                {{ deduction.title }}
             </div>
         </div>
+        <div class="info-1">
+            <span> <i class="fas fa-pencil-alt"></i> <a href="{{ deduction.author_profile_link }}">{{ deduction.author }}</a> </span>
+            <span> <i class="fas fa-calendar-plus"></i> {{ deduction.date_uploaded|date }}</span>
+            <span> <i class="fas fa-calendar-check"></i> {{ deduction.date_last_modified|date }}</span>
+        </div>
+        <div class="description">
+            <b>Django</b> is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern.<br>
+            Just go through this short tutorial to learn all about <b class="diff">Django</b>. It will give you an idea, that how <b class="diff">Django</b> works and what you
+            can do with Django.
+        </div>
+        <div class="info-2">
+            <i class="fas fa-tags"></i>
+        
+            {% with tags=deduction.tags|split:" " %}
+                {% for tag in tags %}
+                    <span>{{ tag }}</span>
+                {% endfor %}
+            {% endwith %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block main-body %}
+<div class="deducted-page">
 
         <div class="deduction-content">
             {% include 'LearnDjango/install-django.html' %}
@@ -70,6 +77,7 @@
             {% include 'LearnDjango/data-exchange.html' %}
             {% include 'LearnDjango/models.html' %}
         </div>
+        
 </div>
 
 {% endblock %}

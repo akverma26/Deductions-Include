@@ -1,14 +1,14 @@
-.deducted-page .info-div > * {
-    max-width: unset;
-}
-
-.deducted-page .info-div .description {
-    line-height: 30px;
+.deducted-page {
+    margin: auto;
+/*     border: 5px solid red; */
+    max-width: 1200px;
+/*     background: white; */
 }
 
 .deduction-content {
     padding: 20px;
     padding-bottom: 50px;
+/*     border: 5px solid red; */
 }
 
 b {

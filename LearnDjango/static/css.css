@@ -26,7 +26,7 @@ b {
     border-radius: 5px;
     margin-top: 40px;
     background: white;
-    font-family: Roboto;
+    /* font-family: Roboto; */
 }
 
 .step-title-div {
@@ -42,7 +42,7 @@ b {
 
 .step-title-text {
     padding: 10px 20px;
-    font-family: GoogleSans;
+    /* font-family: GoogleSans; */
 }
 
 .title-info-button-div {

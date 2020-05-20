@@ -1,0 +1,76 @@
+{% extends 'base/index.html' %}
+{% load static %}
+{% load tags_filters %}
+
+{% block head-meta %}
+    <title>{{ post.title }} | Deductions | Blog by Ankit Kumar Verma</title>
+    <meta name="description" content="{{ post.description }}">
+    <meta name="keywords" content="Deductions, Deduction, Blog, {{ post.tags }}, Tech Blog, Technology, CSE, Computer, PC, Programming, Coding, Developing, C, C++, Python">
+{% endblock %}
+
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'post/css.css' %}">
+<script src="{% static 'base/js/jquery.js' %}"></script>
+
+<script src="{% static 'prism/prism.js' %}"></script>
+<script src="{% static 'prism/plugins/normalize-whitespace/prism-normalize-whitespace.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'prism/prism.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'LearnDjango/static/css.css' %}">
+<script src="{% static 'LearnDjango/static/js.js' %}"></script>
+
+{% endblock %}
+
+{% block header %}
+
+<div class="header-post-details-wrapper">
+    <div class="post-title">
+        {{ post.title }}
+    </div>
+    <div class="post-info">
+        <span title="Author">
+            <i class="fas fa-pencil-alt"></i>
+            <span>{{ post.author }}</span>
+        </span>
+        <span title="Date Uploaded">
+            <i class="fas fa-calendar-plus"></i>
+            <span>{{ post.date_uploaded|date }}</span>
+        </span>
+        <span title="Date Last Modified">
+            <i class="fas fa-calendar-check"></i>
+            <span>{{ post.date_last_modified|date }}</span>
+        </span>
+    </div>
+    <div class="post-description">
+        <b>Django</b> is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern.<br>
+        Just go through this short tutorial to learn all about <b class="diff">Django</b>. It will give you an idea, that how <b class="diff">Django</b> works and what you
+        can do with Django.
+    </div>
+    <div class="post-tags">
+        {% with tags=post.tags|split:" " %}
+            {% for tag in tags %}
+                <span>
+                    <i class="fas fa-tags"></i>
+                    {{ tag }}
+                </span>
+            {% endfor %}
+        {% endwith %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block main-body %}
+
+    <div class="post-content">
+        {% include 'LearnDjango/templates/install-django.html' %}
+        {% include 'LearnDjango/templates/start-project.html' %}
+        {% include 'LearnDjango/templates/create-app.html' %}
+        {% include 'LearnDjango/templates/show-custom-view.html' %}
+        {% include 'LearnDjango/templates/show-custom-view2.html' %}
+        {% include 'LearnDjango/templates/data-exchange.html' %}
+        {% include 'LearnDjango/templates/models.html' %}
+    </div>
+
+{% endblock %}
